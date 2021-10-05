@@ -7,6 +7,7 @@
 | `tsc`               | Compile ts file into js                  |
 | `tsc --outDir dist` | Compile ts file into js in a dist folder |
 | `tsc --outDir dist --watch` | Listens to the files changes and compiles them into de dist folder |
+| `tsc && node/dist` | Compiles and then run the index.js in the compiled directory |
 
 ## Modules and targets
 
@@ -70,7 +71,6 @@ Now we create and index.html and include the bundle file in a script in the head
 
 
 ### Http-server
-
 
 [Npm library](https://www.npmjs.com/package/http-server)
 
@@ -145,5 +145,15 @@ You need to add this config to the tsconfig.json to be able to read json files i
 ```
 
 
+### Libraries with no types
+
+If you install a library that was built on javascript and doesnt have types, typescript gives us this site to look for the types for that library
+
+[Typescript Search](https://www.typescriptlang.org/dt/search?search=)
 
 
+Example: 
+```bash
+npm i lodash
+npm i @types/lodash --save-dev
+```
