@@ -84,6 +84,15 @@ With the library installed we can run this command and see the compiled results 
 
 ## Typescript Tricks
 
+### Alias
+
+These are examples of alias you can use to either replace the real name or to give a name of something you are exporting 
+
+```bash
+import * as content from '../assets/content.json';
+import { ComplicatedJoke as HardJoke, Joke, Quote, Riddle } from '@yfx/models';
+```
+
 ### Barrel files
 
 It is a file that recolects interfaces, types, functions, etc. You can create it by naming it index.ts inside a directory. And the content could look like:
@@ -126,6 +135,14 @@ This way you can import it like
   import { Joke, Quote, Riddle } from 'models';
 ```
 
+
+### Consume Json files
+
+You need to add this config to the tsconfig.json to be able to read json files in the project  
+
+```bash
+"resolveJsonModule": true,
+```
 
 
 
