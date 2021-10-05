@@ -157,3 +157,81 @@ Example:
 npm i lodash
 npm i @types/lodash --save-dev
 ```
+
+
+### Types declaration in the library
+
+To declare all the types files in the distribution folder you can add this to the tsconfig
+
+```bash
+"declaration": true,
+```
+
+Then when you run the build, it will create a types file for each javascript file
+For example: 
+- joke.interface.js -> joke.interface.d.ts
+
+Also if you include this config, the types files will be created in the dist/types folder
+
+```bash
+"declarationDir": "dist/types"
+```
+
+## Publish library to npm
+
+### Package.json config
+
+You need to add this config so that the package manager recognizes where to find the javascript file and the types file
+
+```bash
+ "main": "dist/main.js",
+ "types": "dist/types/main.d.ts",
+```
+
+### Package.json scripts
+
+Also these are the scripts you will need so that npm can build the library
+
+```bash
+ "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc"
+  },
+```
+
+### Semantic Versioning
+
+[Semver](https://semver.org/)
+
+In this website you can find an explanation of how you can use the versioning in the library. But in summary:
+   - MAJOR version when you make incompatible API changes,
+   - MINOR version when you add functionality in a backwards compatible manner, and
+   - PATCH version when you make backwards compatible bug fixes.
+
+### Publish
+
+To publish the library you have to run 
+
+```bash
+ npm login
+```
+```bash
+ npm publish
+```
+
+### Init modules
+
+You can import init.ts files for example if you need to initialize a variable in that file before running your code
+
+```bash
+ import './init'
+```
+
+
+
+
+
+
+
+
+
