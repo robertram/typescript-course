@@ -82,4 +82,29 @@ With the library installed we can run this command and see the compiled results 
  http-server ./dist/ -d false
 ```
 
+## Typescript Tricks
+
+### Barrel files
+
+It is a file that recolects interfaces, types, functions, etc. You can create it by naming it index.ts inside a directory. And the content could look like:
+
+```bash
+export * from './common.types';
+export * from './joke.interface';
+export * from './quote.interface';
+export * from './riddle.interface';
+```
+
+That way you can call the files like this
+
+```bash
+import { Qoute, Joke } from './interfaces'
+```
+
+Instead of 
+
+```bash
+import { Quote } from './interfaces/quote.interface';
+import { Riddle } from './interfaces/riddle.interface';
+```
 
