@@ -108,3 +108,25 @@ import { Quote } from './interfaces/quote.interface';
 import { Riddle } from './interfaces/riddle.interface';
 ```
 
+### Relative Routes
+
+You can add paths to the typescript config so you can access routes relatives to the paths added
+
+
+```bash
+    "baseUrl": "./src",
+    "paths": {
+      "models": ["interfaces/index.ts"]
+    }
+```
+
+This way you can import it like
+
+```bash
+  import { Joke, Quote, Riddle } from 'models';
+```
+
+
+
+
+
